@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./activity.styles.scss";
 
 import { withRouter, Redirect } from "react-router-dom";
-import { TimelineMax, Power2 } from "gsap/all";
+import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
 import surfing from "../../assets/football.jpg";
 import jogging from "../../assets/jogging.jpg";

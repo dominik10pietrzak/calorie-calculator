@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./calculator.styles.scss";
 
-import { TimelineMax, Power2 } from "gsap/all";
+import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
 import {
   BrowserRouter as Router,

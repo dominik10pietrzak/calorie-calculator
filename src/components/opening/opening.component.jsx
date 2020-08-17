@@ -1,6 +1,6 @@
 import React from "react";
 import "./opening.styles.scss";
-import { TimelineMax, Power2 } from "gsap/all";
+import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
 import { Link, Redirect, useHistory } from "react-router-dom";
 

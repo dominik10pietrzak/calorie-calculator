@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./basic.styles.scss";
 
-import { TimelineMax, Power2 } from "gsap/all";
+import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
 import workout from "../../assets/workout.jpg";
 

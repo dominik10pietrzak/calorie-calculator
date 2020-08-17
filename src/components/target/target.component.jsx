@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./target.styles.scss";
 
 import jogging from "../../assets/deadlift.jpg";
-import { TimelineMax, Power2 } from "gsap/gsap-core";
+import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
 const handleAnimation = (sliderAnimation) => {
   const target = document.querySelector(".target");
