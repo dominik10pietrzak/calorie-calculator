@@ -1,0 +1,290 @@
+.activity {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    color: white;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(161, 40, 86);
+      background: linear-gradient(
+        to top right,
+        rgb(230, 53, 82),
+        rgb(105, 9, 46)
+      );
+      opacity: 0.7;
+    }
+
+    .bg-activity {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: grayscale(0.5);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      z-index: 1;
+      font-weight: lighter;
+      text-transform: uppercase;
+    }
+  }
+
+  .bottom {
+    position: relative;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0;
+
+    .description {
+      transition: all 0.3s ease;
+    }
+
+    form {
+      position: relative;
+      display: flex;
+      margin: 20px;
+      margin-bottom: 1.5rem;
+      color: white;
+      transition: all 0.5s ease;
+
+      label {
+        position: relative;
+        margin: 0 0.75rem;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 9.5rem;
+        height: 7.5rem;
+        color: black;
+        border: solid 1px lightgray;
+        transition: all 0.3s ease;
+        border: {
+          left: 0;
+          right: 0;
+        }
+
+        .activity-option {
+          margin: 0;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          position: absolute;
+          z-index: 3;
+          cursor: pointer;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgb(241, 233, 243);
+          clip-path: circle(0% at 0 0);
+          opacity: 0.3;
+          z-index: 0;
+          transition: all 0.3s ease;
+        }
+
+        h3,
+        h2,
+        p {
+          z-index: 1;
+          margin: 0;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        h2 {
+          font-size: 0.9rem;
+          margin-top: 1.5rem;
+          transition: all 0.3s ease;
+        }
+
+        h3 {
+          font-size: 0.8rem;
+          margin-top: 0.25rem;
+          font-weight: lighter;
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 10px 1px rgb(209, 209, 209);
+        }
+      }
+
+      .active {
+        box-shadow: 0px 0px 10px 1px rgb(209, 209, 209);
+
+        &::after {
+          clip-path: circle(100%);
+        }
+
+        h2 {
+          color: rgb(161, 40, 86);
+          color: rgb(101, 52, 158);
+        }
+        button {
+          justify-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-width: 1366px) {
+  .activity {
+    flex-direction: column;
+
+    .top {
+      height: 20%;
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    .bottom {
+      overflow-y: scroll;
+      height: 80%;
+      width: 100%;
+      justify-content: flex-start;
+      padding: 1.5rem;
+
+      .description {
+        font-size: 1.8rem;
+        margin: 2rem 0;
+        z-index: 5;
+        color: black;
+        transition: all 0.3s ease;
+      }
+
+      form {
+        width: 100%;
+        margin: 0;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+          width: 100%;
+          height: auto;
+          padding: {
+            left: 2rem;
+            right: 2rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+          }
+
+          h2 {
+            font-size: 1.8rem;
+          }
+          h3 {
+            font-size: 1.55rem;
+          }
+
+          &:not(:last-child) {
+            border-bottom: none;
+          }
+        }
+      }
+
+      button {
+        margin: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) and (max-width: 823px) {
+  .activity {
+    .top {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .bottom {
+      .description {
+        font-size: 1.6rem;
+      }
+
+      form {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        label {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            font-size: 1.2rem;
+          }
+
+          h2 {
+            font-size: 1.5rem;
+          }
+          h3 {
+            font-size: 1.35rem;
+          }
+        }
+      }
+
+      button {
+        margin: 3rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) and (max-width: 667px) {
+  .activity {
+    .bottom {
+      form {
+        padding: 1.5rem;
+
+        label {
+          padding: {
+            bottom: 15px;
+            top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
