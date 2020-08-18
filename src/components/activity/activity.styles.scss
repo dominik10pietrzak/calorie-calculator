@@ -171,7 +171,8 @@
     }
 
     .bottom {
-      overflow-y: scroll;
+      display: block;
+      overflow-y: auto;
       height: 80%;
       width: 100%;
       justify-content: flex-start;
