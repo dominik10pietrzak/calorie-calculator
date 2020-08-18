@@ -34,10 +34,6 @@ class Calculator extends Component {
     }, 5);
   };
 
-  componentWillUnmount = () => {
-    this.props.getState(this.state);
-  };
-
   checkIfEmpty = () => {
     const btn = document.getElementById("basic-button");
     const elements = document.querySelectorAll(".basic-data-input");
@@ -75,7 +71,9 @@ class Calculator extends Component {
     this.props.history.push(path);
   };
 
-  sliderAnimation = () => {
+  leavingAnimation = () => {
+    this.props.getState(this.state);
+
     const tl = new TimelineMax();
     const slider = document.querySelector(".calculator .slider");
 
@@ -124,7 +122,7 @@ class Calculator extends Component {
               <Target
                 setValue={this.setValue}
                 handleClickNext={this.goTo}
-                sliderAnimation={this.sliderAnimation}
+                leavingAnimation={this.leavingAnimation}
                 isChecked={this.isChecked}
                 state={this.state}
               />

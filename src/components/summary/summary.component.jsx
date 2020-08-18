@@ -22,12 +22,6 @@ const Summary = ({ data }) => {
 
     setScore(ppm);
 
-    if (!data && score === 0 && isNaN(ppm)) {
-      history.push("/calculator");
-    } else {
-      console.log(`everything's fine`);
-    }
-
     if (data.target === "-500") {
       setYourTarget("zmniejszyć poziom tkanki tłuszczowej");
     } else if (data.target === "0") {
@@ -50,6 +44,12 @@ const Summary = ({ data }) => {
       setTimeout(() => {
         button.style.opacity = 1;
       }, 300);
+    }
+
+    if (isNaN(ppm)) {
+      history.push("/calculator");
+    } else {
+      console.log(`everything's fine`);
     }
   }, []);
 

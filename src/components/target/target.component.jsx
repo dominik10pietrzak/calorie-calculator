@@ -4,20 +4,20 @@ import "./target.styles.scss";
 import jogging from "../../assets/deadlift.jpg";
 import { TimelineMax, Power2 } from "gsap/dist/gsap";
 
-const handleAnimation = (sliderAnimation) => {
+const handleAnimation = (leavingAnimation) => {
   const target = document.querySelector(".target");
   const slider = document.querySelector(".target .slider");
   const tl = new TimelineMax();
 
   tl.fromTo(target, 0.5, { opacity: 1 }, { opacity: 0, ease: Power2.easeOut });
 
-  sliderAnimation();
+  leavingAnimation();
 };
 
 const Target = ({
   setValue,
   handleClickNext,
-  sliderAnimation,
+  leavingAnimation,
   isChecked,
   state,
 }) => {
@@ -150,7 +150,7 @@ const Target = ({
         <button
           className="button-target"
           onClick={() => {
-            handleAnimation(sliderAnimation);
+            handleAnimation(leavingAnimation);
             setTimeout(() => {
               handleClickNext("/summary");
             }, 499);
